@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/output.css" />
+    <title>Async</title>
+  </head>
+  <body>
+    <header>
+      <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div
+          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+        >
+          <a href="https://flowbite.com/" class="flex items-center">
+            <img
+              src="https://flowbite.com/docs/images/logo.svg"
+              class="h-8 mr-3"
+              alt="Flowbite Logo"
+            />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >Flowbite</span
+            >
+          </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+              class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                  aria-current="page"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/dist/Page/addProduct.html"
+                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >Add Product</a
+                >
+              </li>     
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="min-h-screen bg-radial-blue ">
+      <h1 class="text-center p-4 font-bold text-4xl">List product</h1>
+      <!--card container  -->
+      <div class="card-container flex flex-wrap justify-center gap-4">
+        <div
+          class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 "
+        >
+          <a href="#" class="block w-full">
+            <img
+              class="rounded-t-lg w-full"
+              src="data:image/jpeg;base64,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PJgGBFxxB5Gx4iW3cklmJZiSSxJJZibkknUknW8CKaaz33RlsnrcV1rDs0Rm8i7Aqg87DM3kQvjPFYakSQACWJACjUlibBQOZJNp3vdLYowmGSmbZz2qjDm7AX15gABQfBRMzuo2RvYiJxUREQEREC3ERArEmQJMBERAREQEREDxW/m5S41Oto5UxCjRjotVRwRz8m5ek4fiaL02anURkdTlZGFmU+BHxvwIII0n1JPMb3bnYfHLd+xWAsldRdgOIVh9ZLngeFzYi8rHLTLHz/mk3m33i3VxeCJ69CU5V0u1MjlduKHya3leaUGdZdpXAZkUX5HhMQGXFaB1/d7pCpLhW+mMTVpqMpAua44LbkH4A3sPrcL25rvDt2rjK7Vq2nJEButNOSr4+JbmfAWAwqVbkeENR5qfZExk5btakMTaw98lkbwt5wqGGKaa2HjLtNLmSqcL8SQAOZJNgAOZvOjbndH7OUrY5CqCxXDN3n8DUH1V/c4ng1hcFbJOW9sjo03XuVxtZezr1Ckcb6GqR4WuF9S32TOnyFFuEmcbd1SYiJgREQEREC3ERArEmQJMBERAREQEREBERApIvx4eE8rtfo/2fiLk0eqY37dE5Dc8TlHYJ8ypnrIjY5RjeiHW9DFafZqU7n8asB+WaWv0XbQUnKcO45ZajAn2MgA987hEr2rNOA1NwNqKbDDFvNatG35nB+EoXcnan/pH/wB5Q/6k+gom+9NOEYbcHajaNQVPN6tO35GYzfbO6LK7WOJxCIOa0lLn2OwUD8JnWIme9NR57d/dHCYSzUqeap/fOcz8LGxtZb8woAnooiTbtpERAREQEREBERAtxEQKxJkCTAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQLcREAJMRAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQKIiIH//2Q=="
+              alt="product image"
+            />
+          </a>
+          <div class="px-5 pb-5">
+            <a href="#">
+              <h5
+                class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+              >
+                Apple Watch Series 7 GPS
+              </h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+              <svg
+                class="w-4 h-4 text-yellow-300 mr-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 text-yellow-300 mr-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 text-yellow-300 mr-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 text-yellow-300 mr-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 text-gray-200 dark:text-gray-600"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3"
+                >5.0</span
+              >
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-3xl font-bold text-gray-900 dark:text-white"
+                >$599</span
+              >
+              <a
+                href="#"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >Add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- link javascript -->
+    <script src="./Javascript/javascript.js"></script>
+    <!-- Flowbite CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+  </body>
+</html>
